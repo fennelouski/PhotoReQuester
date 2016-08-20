@@ -14,11 +14,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-typedef NS_ENUM(NSUInteger, PQRSellerListTableSection) {
-    PQRSellerListTableSectionRequests,
-    PQRSellerListTableSectionFilter,
-    PQRSellerListTableSectionCount
-};
 
 @implementation PQRSellerListTableView
 
@@ -119,7 +114,8 @@ typedef NS_ENUM(NSUInteger, PQRSellerListTableSection) {
     MKMapPoint point1 = MKMapPointForCoordinate(PQRLocationManager.currentCoordinate);
     MKMapPoint point2 = MKMapPointForCoordinate(localRequest.coordinate);
     CLLocationDistance distance = MKMetersBetweenMapPoints(point1, point2);
-    cell.distanceLabel.text = [NSString stringWithFormat:@"%gkm", distance/1000];
+    localRequest.approximateDistance = distance;
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%gkm", localRequest.approximateDistance/1000];
 }
 
 

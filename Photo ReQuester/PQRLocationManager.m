@@ -38,6 +38,9 @@
 
     if (self) {
         [self locationManager];
+
+        _currentLocation = [[CLLocation alloc] initWithLatitude:[NSUserDefaults.standardUserDefaults doubleForKey:@"latitude"]
+                                                      longitude:[NSUserDefaults.standardUserDefaults doubleForKey:@"longitude"]];
     }
 
     return self;
@@ -85,6 +88,9 @@
     if (locations.count > 0) {
         self.currentLocation = locations.firstObject;
 //        NSLog(@"currentLocation: %@", self.currentLocation);
+
+        [NSUserDefaults.standardUserDefaults setDouble:self.currentLocation.coordinate.latitude forKey:@"latitude"];
+        [NSUserDefaults.standardUserDefaults setDouble:self.currentLocation.coordinate.longitude forKey:@"longitude"];
     } else {
         NSLog(@"Location Manager updated with new \"locations\" but there weren't any locations in the array that it returned.");
     }
@@ -130,5 +136,64 @@
 + (CLLocationCoordinate2D)currentCoordinate {
     return PQRLocationManager.sharedLocationManager.currentLocation.coordinate;
 }
+
++ (MKCoordinateRegion)regionFromLocations:(NSArray *)locations {
+    CLLocationCoordinate2D upper = PQRLocationManager.sharedLocationManager.currentLocation.coordinate;
+    CLLocationCoordinate2D lower = PQRLocationManager.sharedLocationManager.currentLocation.coordinate;
+
+    for (CLLocation *location in locations) {
+        if(location.coordinate.latitude > upper.latitude) upper.latitude = location.coordinate.latitude;
+        if(location.coordinate.latitude < lower.latitude) lower.latitude = location.coordinate.latitude;
+        if(location.coordinate.longitude > upper.longitude) upper.longitude = location.coordinate.longitude;
+        if(location.coordinate.longitude < lower.longitude) lower.longitude = location.coordinate.longitude;
+    }
+
+    MKCoordinateSpan locationSpan;
+    locationSpan.latitudeDelta = upper.latitude - lower.latitude;
+    locationSpan.longitudeDelta = upper.longitude - lower.longitude;
+    locationSpan.latitudeDelta *= 1.3f;
+    locationSpan.longitudeDelta *= 1.3f;
+    CLLocationCoordinate2D locationCenter;
+    locationCenter.latitude = (upper.latitude + lower.latitude) / 2;
+    locationCenter.longitude = (upper.longitude + lower.longitude) / 2;
+
+    MKCoordinateRegion region = MKCoordinateRegionMake(locationCenter, locationSpan);
+    return region;
+}
+
++ (MKCoordinateRegion)userRegionWithCoordinate:(CLLocationCoordinate2D)upper {
+    return [PQRLocationManager regionFromCoordinate:upper
+                                       toCoordinate:PQRLocationManager.sharedLocationManager.currentLocation.coordinate];
+
+}
+
++ (MKCoordinateRegion)regionFromCoordinate:(CLLocationCoordinate2D)coordinate1 toCoordinate:(CLLocationCoordinate2D)coordinate2 {
+    CLLocationCoordinate2D upper = CLLocationCoordinate2DMake(coordinate1.latitude > coordinate2.latitude ? coordinate1.latitude : coordinate2.latitude, coordinate1.longitude > coordinate2.longitude ? coordinate1.longitude : coordinate2.longitude);
+    CLLocationCoordinate2D lower = CLLocationCoordinate2DMake(coordinate1.latitude < coordinate2.latitude ? coordinate1.latitude : coordinate2.latitude, coordinate1.longitude < coordinate2.longitude ? coordinate1.longitude : coordinate2.longitude);
+
+    MKCoordinateSpan locationSpan;
+    locationSpan.latitudeDelta = upper.latitude - lower.latitude;
+    locationSpan.longitudeDelta = upper.longitude - lower.longitude;
+    locationSpan.latitudeDelta *= 1.3f;
+    locationSpan.longitudeDelta *= 2.3f;
+
+    if (locationSpan.latitudeDelta > 180) {
+        locationSpan.latitudeDelta = 179;
+    }
+
+    if (locationSpan.longitudeDelta > 360) {
+        locationSpan.longitudeDelta = 359;
+    }
+
+    CLLocationCoordinate2D locationCenter;
+    locationCenter.latitude = (upper.latitude + lower.latitude) / 2;
+    locationCenter.longitude = (upper.longitude + lower.longitude) / 2;
+
+    MKCoordinateRegion region = MKCoordinateRegionMake(locationCenter, locationSpan);
+    return region;
+}
+
+
+
 
 @end

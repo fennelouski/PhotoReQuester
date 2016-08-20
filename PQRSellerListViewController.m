@@ -9,10 +9,16 @@
 #import "PQRSellerListViewController.h"
 
 #import "PQRSellerListTableView.h"
+#import "PQRLocalRequestDetailView.h"
 
-@interface PQRSellerListViewController ()
+#import "PQRSellerDataManager.h"
+#import "PQRLocalRequestModel.h"
+
+@interface PQRSellerListViewController () <UITableViewDelegate, ALUSettingsViewDelegate>
 
 @property (nonatomic, strong) PQRSellerListTableView *tableView;
+
+@property (nonatomic, strong) PQRLocalRequestDetailView *detailView;
 
 @end
 
@@ -47,6 +53,7 @@
         _tableView = [[PQRSellerListTableView alloc] initWithFrame:self.tableViewFrame style:UITableViewStylePlain];
         _tableView.contentInset = self.tableViewInsets;
         _tableView.scrollIndicatorInsets = _tableView.contentInset;
+        _tableView.delegate = self;
     }
 
     return _tableView;
@@ -64,6 +71,37 @@
     insets.bottom = 44.0f;
 
     return insets;
+}
+
+- (PQRLocalRequestDetailView *)detailView {
+    if (!_detailView) {
+        _detailView = [[PQRLocalRequestDetailView alloc] initWithFrame:self.detailViewFrame];
+        _detailView.presentingViewController = self.navigationController;
+        _detailView.settingsViewDelegate = self;
+    }
+
+    return _detailView;
+}
+
+- (CGRect)detailViewFrame {
+    CGRect frame = self.view.bounds;
+
+    frame = CGRectInset(frame, 20.0f, 100.0f);
+
+    return frame;
+}
+
+
+
+#pragma mark - Table View Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == PQRSellerListTableSectionRequests) {
+        PQRLocalRequestModel *localRequest = [[PQRSellerDataManager currentRequests] objectAtIndex:indexPath.row];
+
+        self.detailView.localRequest = localRequest;
+        [self.detailView show];
+    }
 }
 
 

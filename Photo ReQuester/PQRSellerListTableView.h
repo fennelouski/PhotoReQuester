@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, PQRSellerListTableSection) {
+    PQRSellerListTableSectionRequests,
+    PQRSellerListTableSectionFilter,
+    PQRSellerListTableSectionCount
+};
+
 @interface PQRSellerListTableView : UITableView
 
 @end

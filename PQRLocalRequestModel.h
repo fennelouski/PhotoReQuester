@@ -25,4 +25,6 @@
 
 @property (nonatomic, strong) NSString *request_id;
 
+@property CLLocationDistance approximateDistance;
+
 @end

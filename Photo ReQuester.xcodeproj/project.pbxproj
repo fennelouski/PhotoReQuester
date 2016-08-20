@@ -43,6 +43,7 @@
 		8045CB4E1D68A78B00C84A3C /* UIFont+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB481D68A78B00C84A3C /* UIFont+Custom.m */; };
 		8045CB4F1D68A78B00C84A3C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB4A1D68A78B00C84A3C /* UIImage+ImageEffects.m */; };
 		8045CB531D68B1CA00C84A3C /* PQRSellerListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB521D68B1CA00C84A3C /* PQRSellerListTableViewCell.m */; };
+		8045CB561D68CA5C00C84A3C /* PQRLocalRequestDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB551D68CA5C00C84A3C /* PQRLocalRequestDetailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,8 @@
 		8045CB501D68A86D00C84A3C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8045CB511D68B1CA00C84A3C /* PQRSellerListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRSellerListTableViewCell.h; sourceTree = "<group>"; };
 		8045CB521D68B1CA00C84A3C /* PQRSellerListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerListTableViewCell.m; sourceTree = "<group>"; };
+		8045CB541D68CA5C00C84A3C /* PQRLocalRequestDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRLocalRequestDetailView.h; sourceTree = "<group>"; };
+		8045CB551D68CA5C00C84A3C /* PQRLocalRequestDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRLocalRequestDetailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +282,8 @@
 				8045CB0F1D68199200C84A3C /* PQRSellerListTableView.m */,
 				8045CB511D68B1CA00C84A3C /* PQRSellerListTableViewCell.h */,
 				8045CB521D68B1CA00C84A3C /* PQRSellerListTableViewCell.m */,
+				8045CB541D68CA5C00C84A3C /* PQRLocalRequestDetailView.h */,
+				8045CB551D68CA5C00C84A3C /* PQRLocalRequestDetailView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				8045CB4E1D68A78B00C84A3C /* UIFont+Custom.m in Sources */,
 				8045CB061D68087800C84A3C /* PQRUserManager.m in Sources */,
 				8045CB0D1D6818CE00C84A3C /* PQRSellerListViewController.m in Sources */,
+				8045CB561D68CA5C00C84A3C /* PQRLocalRequestDetailView.m in Sources */,
 				8045CB361D68A74F00C84A3C /* NGAParallaxMotion.m in Sources */,
 				8045CB4D1D68A78B00C84A3C /* UIFont+AppFonts.m in Sources */,
 				8045CB101D68199200C84A3C /* PQRSellerListTableView.m in Sources */,
