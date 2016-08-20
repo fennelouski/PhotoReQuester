@@ -18,6 +18,7 @@
 		8045CAE51D67DB5100C84A3C /* Photo_ReQuesterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAE41D67DB5100C84A3C /* Photo_ReQuesterUITests.m */; };
 		8045CAF71D67EF0400C84A3C /* PQRPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAF61D67EF0400C84A3C /* PQRPhotoModel.m */; };
 		8045CAFB1D67EFB500C84A3C /* PQRSellerDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAFA1D67EFB500C84A3C /* PQRSellerDataManager.m */; };
+		8045CAFE1D67F07700C84A3C /* PQRLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAFD1D67F07700C84A3C /* PQRLocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		8045CAF61D67EF0400C84A3C /* PQRPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRPhotoModel.m; sourceTree = "<group>"; };
 		8045CAF91D67EFB500C84A3C /* PQRSellerDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRSellerDataManager.h; sourceTree = "<group>"; };
 		8045CAFA1D67EFB500C84A3C /* PQRSellerDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerDataManager.m; sourceTree = "<group>"; };
+		8045CAFC1D67F07700C84A3C /* PQRLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRLocationManager.h; sourceTree = "<group>"; };
+		8045CAFD1D67F07700C84A3C /* PQRLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRLocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +116,7 @@
 				8045CAC01D67DB5100C84A3C /* AppDelegate.m */,
 				8045CAC21D67DB5100C84A3C /* ViewController.h */,
 				8045CAC31D67DB5100C84A3C /* ViewController.m */,
-				8045CAF81D67EF5800C84A3C /* Seller Model */,
+				8045CAFF1D67F07C00C84A3C /* Model */,
 				8045CAC51D67DB5100C84A3C /* Main.storyboard */,
 				8045CACB1D67DB5100C84A3C /* Assets.xcassets */,
 				8045CACD1D67DB5100C84A3C /* LaunchScreen.storyboard */,
@@ -160,6 +163,16 @@
 			);
 			name = "Seller Model";
 			path = ..;
+			sourceTree = "<group>";
+		};
+		8045CAFF1D67F07C00C84A3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8045CAFC1D67F07700C84A3C /* PQRLocationManager.h */,
+				8045CAFD1D67F07700C84A3C /* PQRLocationManager.m */,
+				8045CAF81D67EF5800C84A3C /* Seller Model */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +308,7 @@
 				8045CAC41D67DB5100C84A3C /* ViewController.m in Sources */,
 				8045CACA1D67DB5100C84A3C /* Photo_ReQuester.xcdatamodeld in Sources */,
 				8045CAC11D67DB5100C84A3C /* AppDelegate.m in Sources */,
+				8045CAFE1D67F07700C84A3C /* PQRLocationManager.m in Sources */,
 				8045CABE1D67DB5100C84A3C /* main.m in Sources */,
 				8045CAFB1D67EFB500C84A3C /* PQRSellerDataManager.m in Sources */,
 				8045CAF71D67EF0400C84A3C /* PQRPhotoModel.m in Sources */,
