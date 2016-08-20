@@ -70,8 +70,8 @@
             request.bounty = [[PQRCurrency alloc] init];
             request.bounty.absoluteCents = arc4random_uniform(6) * 25 + 25;
 
-            request.coordinate = CLLocationCoordinate2DMake((float)arc4random_uniform(10000)/1000.0f - 5 + userCoordinate.latitude,
-                                                            (float)arc4random_uniform(10000)/1000.0f - 9 + userCoordinate.longitude);
+            request.coordinate = CLLocationCoordinate2DMake((float)arc4random_uniform(10000)/1000000.0f - 0.005f + userCoordinate.latitude,
+                                                            (float)arc4random_uniform(10000)/1000000.0f - 0.005f + userCoordinate.longitude);
 
             while (!CLLocationCoordinate2DIsValid(request.coordinate)) {
                 request.coordinate = CLLocationCoordinate2DMake(arc4random_uniform(10) - 5 + userCoordinate.latitude,

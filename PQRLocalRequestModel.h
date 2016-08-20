@@ -27,4 +27,6 @@
 
 @property CLLocationDistance approximateDistance;
 
+@property BOOL completed;
+
 @end

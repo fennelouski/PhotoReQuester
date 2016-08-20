@@ -12,6 +12,9 @@
 
 #import "PQRLocationManager.h"
 
+#import "NKFColor.h"
+#import "NKFColor+AppColors.h"
+
 @interface PQRLocalRequestDetailView () <MKMapViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIToolbar *headerToolbar;
@@ -22,7 +25,7 @@
 
 @property (nonatomic, strong) UILabel *bountyLabel;
 
-@property (nonatomic, strong) UIBarButtonItem *flexibleSpace, *cameraButton;
+@property (nonatomic, strong) UIBarButtonItem *flexibleSpace, *cameraButton, *fixedSpace;
 
 @end
 
@@ -54,7 +57,7 @@
     if (!_headerToolbar) {
         _headerToolbar = [[UIToolbar alloc] initWithFrame:self.headerToolbarFrame];
         [_headerToolbar addSubview:self.bountyLabel];
-        [_headerToolbar setItems:@[self.flexibleSpace, self.cameraButton]];
+        [_headerToolbar setItems:@[self.flexibleSpace, self.cameraButton, self.fixedSpace]];
     }
 
     return _headerToolbar;
@@ -73,6 +76,7 @@
         _mapView = [[MKMapView alloc] initWithFrame:self.mapViewFrame];
         _mapView.showsUserLocation = YES;
         _mapView.delegate = self;
+        _mapView.mapType = MKMapTypeHybrid;
     }
 
     return _mapView;
@@ -82,6 +86,8 @@
     CGRect frame = self.bounds;
 
     frame.size.height -= self.detailTextViewFrame.size.height;
+    frame.size.height -= self.headerToolbarFrame.size.height;
+    frame.origin.y += self.headerToolbarFrame.size.height;
 
     return frame;
 }
@@ -90,6 +96,7 @@
     if (!_detailTextView) {
         _detailTextView = [[UITextView alloc] initWithFrame:self.detailTextViewFrame];
         _detailTextView.editable = NO;
+        _detailTextView.font = [UIFont systemFontOfSize:18.0f];
     }
 
     return _detailTextView;
@@ -126,6 +133,15 @@
     return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                          target:self
                                                          action:nil];
+}
+
+- (UIBarButtonItem *)fixedSpace {
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                                target:self
+                                                                                action:nil];
+    fixedSpace.width = 10.0f;
+
+    return fixedSpace;
 }
 
 - (UIBarButtonItem *)cameraButton {
@@ -177,7 +193,7 @@
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         MKPinAnnotationView *pinAnnotationView = (MKPinAnnotationView *)annotationView;
-        pinAnnotationView.pinTintColor = [UIColor greenColor];
+        pinAnnotationView.pinTintColor = [NKFColor randomDarkColor];
     } else {
         annotationView.annotation = annotation;
     }
