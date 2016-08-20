@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface PQRLocationManager : NSObject
+
++ (void)start;
+
++ (CLLocationCoordinate2D)currentCoordinate;
 
 @end
