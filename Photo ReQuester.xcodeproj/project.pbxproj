@@ -16,6 +16,7 @@
 		8045CACF1D67DB5100C84A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8045CACD1D67DB5100C84A3C /* LaunchScreen.storyboard */; };
 		8045CADA1D67DB5100C84A3C /* Photo_ReQuesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAD91D67DB5100C84A3C /* Photo_ReQuesterTests.m */; };
 		8045CAE51D67DB5100C84A3C /* Photo_ReQuesterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAE41D67DB5100C84A3C /* Photo_ReQuesterUITests.m */; };
+		8045CAF71D67EF0400C84A3C /* PQRPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAF61D67EF0400C84A3C /* PQRPhotoModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		8045CAE01D67DB5100C84A3C /* Photo ReQuesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo ReQuesterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8045CAE41D67DB5100C84A3C /* Photo_ReQuesterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo_ReQuesterUITests.m; sourceTree = "<group>"; };
 		8045CAE61D67DB5100C84A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8045CAF51D67EF0400C84A3C /* PQRPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRPhotoModel.h; sourceTree = "<group>"; };
+		8045CAF61D67EF0400C84A3C /* PQRPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRPhotoModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 				8045CAC01D67DB5100C84A3C /* AppDelegate.m */,
 				8045CAC21D67DB5100C84A3C /* ViewController.h */,
 				8045CAC31D67DB5100C84A3C /* ViewController.m */,
+				8045CAF81D67EF5800C84A3C /* Seller Model */,
 				8045CAC51D67DB5100C84A3C /* Main.storyboard */,
 				8045CACB1D67DB5100C84A3C /* Assets.xcassets */,
 				8045CACD1D67DB5100C84A3C /* LaunchScreen.storyboard */,
@@ -141,6 +145,16 @@
 				8045CAE61D67DB5100C84A3C /* Info.plist */,
 			);
 			path = "Photo ReQuesterUITests";
+			sourceTree = "<group>";
+		};
+		8045CAF81D67EF5800C84A3C /* Seller Model */ = {
+			isa = PBXGroup;
+			children = (
+				8045CAF51D67EF0400C84A3C /* PQRPhotoModel.h */,
+				8045CAF61D67EF0400C84A3C /* PQRPhotoModel.m */,
+			);
+			name = "Seller Model";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +291,7 @@
 				8045CACA1D67DB5100C84A3C /* Photo_ReQuester.xcdatamodeld in Sources */,
 				8045CAC11D67DB5100C84A3C /* AppDelegate.m in Sources */,
 				8045CABE1D67DB5100C84A3C /* main.m in Sources */,
+				8045CAF71D67EF0400C84A3C /* PQRPhotoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +517,7 @@
 				8045CAEB1D67DB5100C84A3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8045CAEC1D67DB5100C84A3C /* Build configuration list for PBXNativeTarget "Photo ReQuesterTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +526,7 @@
 				8045CAEE1D67DB5100C84A3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8045CAEF1D67DB5100C84A3C /* Build configuration list for PBXNativeTarget "Photo ReQuesterUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +535,7 @@
 				8045CAF11D67DB5100C84A3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
