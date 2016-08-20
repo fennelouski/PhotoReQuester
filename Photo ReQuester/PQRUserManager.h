@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, PQRUserType) {
+    PQRUserTypeBuyer,
+    PQRUserTypeSeller
+};
+
 @interface PQRUserManager : NSObject
+
++ (PQRUserType)isBuyer;
++ (PQRUserType)isSeller;
+
++ (void)setUserType:(PQRUserType)userType;
++ (PQRUserType)userType;
 
 @end
