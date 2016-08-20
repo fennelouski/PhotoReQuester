@@ -137,6 +137,10 @@
     return PQRLocationManager.sharedLocationManager.currentLocation.coordinate;
 }
 
++ (CLLocation *)currentLocation {
+    return PQRLocationManager.sharedLocationManager.currentLocation;
+}
+
 + (MKCoordinateRegion)regionFromLocations:(NSArray *)locations {
     CLLocationCoordinate2D upper = PQRLocationManager.sharedLocationManager.currentLocation.coordinate;
     CLLocationCoordinate2D lower = PQRLocationManager.sharedLocationManager.currentLocation.coordinate;

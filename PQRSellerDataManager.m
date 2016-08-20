@@ -13,6 +13,9 @@
 #import "PQRLocationManager.h"
 
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+
 
 @interface PQRSellerDataManager ()
 
@@ -129,6 +132,53 @@
     return PQRSellerDataManager.sharedDataManager.requests;
 }
 
++ (void)fulfillRequest:(PQRLocalRequestModel *)localRequest
+             withPhoto:(UIImage *)photo {
+
+    localRequest.completed = YES;
+
+    PQRPhotoModel *photoModel = PQRPhotoModel.new;
+    photoModel.photo = photo;
+    photoModel.coordinate = PQRLocationManager.currentCoordinate;
+    photoModel.date = NSDate.new;
+    photoModel.price = localRequest.bounty;
+    photoModel.altitude = PQRLocationManager.currentLocation.altitude;
+    [PQRSellerDataManager.sharedDataManager.takenPhotos addObject:photoModel];
+
+    NSData *imageData = UIImageJPEGRepresentation(photo, 1.0);
+    NSString *encodedString = [imageData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
+
+    if (!encodedString) {
+        NSLog(@"This is ALL wrong. The photo couldn't be encoded and is gonna cause MAD problems.");
+        return;
+    }
+
+    NSURL *url = [NSURL URLWithString:@"localhost:3000/api/v1/request/upload-photo"];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"POST";
+
+    NSDictionary *dictionary = @{@"data": encodedString};
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+
+    if (!error) {
+        NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request
+                                                                   fromData:data completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
+                                                                       if (error) {
+                                                                           NSLog(@"Error while uploading photo\n%@", error);
+                                                                       } else {
+                                                                           NSLog(@"It worked! The photo was uploaded. %@", response);
+                                                                       }
+                                                                   }];
+        
+        [uploadTask resume];
+    }
+
+}
 
 
 

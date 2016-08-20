@@ -15,6 +15,7 @@
 + (void)start;
 
 + (CLLocationCoordinate2D)currentCoordinate;
++ (CLLocation *)currentLocation;
 
 + (MKCoordinateRegion)regionFromLocations:(NSArray *)locations;
 + (MKCoordinateRegion)userRegionWithCoordinate:(CLLocationCoordinate2D)upper;
