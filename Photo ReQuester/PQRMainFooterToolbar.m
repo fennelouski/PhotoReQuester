@@ -30,6 +30,12 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+
+    [self updateToolbar];
+}
+
 + (CGRect)footerToolbarFrame {
     CGRect frame = UIApplication.sharedApplication.keyWindow.bounds;
 

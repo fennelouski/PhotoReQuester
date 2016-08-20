@@ -21,4 +21,6 @@ typedef NS_ENUM(NSUInteger, PQRSellerVC) {
 + (PQRSellerVC)currentVCType;
 + (void)setCurrentVCType:(PQRSellerVC)currentVCType;
 
++ (NSArray *)currentRequests;
+
 @end

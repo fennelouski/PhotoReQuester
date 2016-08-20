@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#import "PQRCurrency.h"
+
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
@@ -18,5 +21,9 @@
 @property float elevation;
 
 @property (nonatomic, strong) NSDate *date;
+
+@property (nonatomic, strong) PQRCurrency *price;
+
+@property (nonatomic, strong) NSString *photoDescription;
 
 @end

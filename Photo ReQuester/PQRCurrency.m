@@ -54,4 +54,8 @@
     return _absoluteCents;
 }
 
+- (NSString *)stringExpression {
+    return [NSString stringWithFormat:@"$%zd.%zd", _dollars, _cents];
+}
+
 @end

@@ -44,7 +44,7 @@
 
 - (PQRSellerListTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[PQRSellerListTableView alloc] initWithFrame:self.tableViewFrame];
+        _tableView = [[PQRSellerListTableView alloc] initWithFrame:self.tableViewFrame style:UITableViewStylePlain];
         _tableView.contentInset = self.tableViewInsets;
         _tableView.scrollIndicatorInsets = _tableView.contentInset;
     }
@@ -61,7 +61,6 @@
 - (UIEdgeInsets)tableViewInsets {
     UIEdgeInsets insets = UIEdgeInsetsZero;
 
-    insets.top = 60.0f;
     insets.bottom = 44.0f;
 
     return insets;

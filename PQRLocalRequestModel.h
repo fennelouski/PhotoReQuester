@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "PQRCurrency.h"
+
 @interface PQRLocalRequestModel : NSObject
 
 @property (nonatomic, strong) NSDate *expirationDate;
@@ -18,5 +20,9 @@
 @property (nonatomic, strong) NSString *title;
 
 @property (nonatomic, strong) NSString *requestDescription;
+
+@property (nonatomic, strong) PQRCurrency *bounty;
+
+@property (nonatomic, strong) NSString *request_id;
 
 @end

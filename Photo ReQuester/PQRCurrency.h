@@ -17,4 +17,6 @@
 
 - (NSInteger)absoluteCents;
 
+- (NSString *)stringExpression;
+
 @end
