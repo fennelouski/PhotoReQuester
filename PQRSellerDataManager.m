@@ -13,6 +13,9 @@
 #import "PQRLocationManager.h"
 
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+
 
 @interface PQRSellerDataManager ()
 
@@ -67,10 +70,11 @@
             request.title = @"Take a photo for me!";
             request.request_id = @([NSString stringWithFormat:@"%d", i].hash).description;
             request.requestDescription = request.request_id;
-            request.bounty = [PQRCurrency currencyWithString:@(i).description];
+            request.bounty = [[PQRCurrency alloc] init];
+            request.bounty.absoluteCents = arc4random_uniform(6) * 25 + 25;
 
-            request.coordinate = CLLocationCoordinate2DMake((float)arc4random_uniform(10000)/1000.0f - 5 + userCoordinate.latitude,
-                                                            (float)arc4random_uniform(20000)/1000.0f - 10 + userCoordinate.longitude);
+            request.coordinate = CLLocationCoordinate2DMake((float)arc4random_uniform(10000)/1000000.0f - 0.005f + userCoordinate.latitude,
+                                                            (float)arc4random_uniform(10000)/1000000.0f - 0.005f + userCoordinate.longitude);
 
             while (!CLLocationCoordinate2DIsValid(request.coordinate)) {
                 request.coordinate = CLLocationCoordinate2DMake(arc4random_uniform(10) - 5 + userCoordinate.latitude,
@@ -128,6 +132,53 @@
     return PQRSellerDataManager.sharedDataManager.requests;
 }
 
++ (void)fulfillRequest:(PQRLocalRequestModel *)localRequest
+             withPhoto:(UIImage *)photo {
+
+    localRequest.completed = YES;
+
+    PQRPhotoModel *photoModel = PQRPhotoModel.new;
+    photoModel.photo = photo;
+    photoModel.coordinate = PQRLocationManager.currentCoordinate;
+    photoModel.date = NSDate.new;
+    photoModel.price = localRequest.bounty;
+    photoModel.altitude = PQRLocationManager.currentLocation.altitude;
+    [PQRSellerDataManager.sharedDataManager.takenPhotos addObject:photoModel];
+
+    NSData *imageData = UIImageJPEGRepresentation(photo, 1.0);
+    NSString *encodedString = [imageData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
+
+    if (!encodedString) {
+        NSLog(@"This is ALL wrong. The photo couldn't be encoded and is gonna cause MAD problems.");
+        return;
+    }
+
+    NSURL *url = [NSURL URLWithString:@"localhost:3000/api/v1/request/upload-photo"];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"POST";
+
+    NSDictionary *dictionary = @{@"data": encodedString};
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+
+    if (!error) {
+        NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request
+                                                                   fromData:data completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
+                                                                       if (error) {
+                                                                           NSLog(@"Error while uploading photo\n%@", error);
+                                                                       } else {
+                                                                           NSLog(@"It worked! The photo was uploaded. %@", response);
+                                                                       }
+                                                                   }];
+        
+        [uploadTask resume];
+    }
+
+}
 
 
 

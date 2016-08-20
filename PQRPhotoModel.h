@@ -18,7 +18,7 @@
 @property (nonatomic, strong) UIImage *photo;
 
 @property CLLocationCoordinate2D coordinate;
-@property float elevation;
+@property double altitude;
 
 @property (nonatomic, strong) NSDate *date;
 

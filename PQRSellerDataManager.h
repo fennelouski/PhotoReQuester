@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "PQRLocalRequestModel.h"
 
 typedef NS_ENUM(NSUInteger, PQRSellerVC) {
     PQRSellerVCMap,
@@ -22,5 +24,8 @@ typedef NS_ENUM(NSUInteger, PQRSellerVC) {
 + (void)setCurrentVCType:(PQRSellerVC)currentVCType;
 
 + (NSArray *)currentRequests;
+
++ (void)fulfillRequest:(PQRLocalRequestModel *)request
+             withPhoto:(UIImage *)photo;
 
 @end

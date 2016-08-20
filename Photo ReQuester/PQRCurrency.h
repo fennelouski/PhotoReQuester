@@ -16,6 +16,7 @@
 - (NSInteger)cents;
 
 - (NSInteger)absoluteCents;
+- (void)setAbsoluteCents:(NSInteger)absoluteCents;
 
 - (NSString *)stringExpression;
 
