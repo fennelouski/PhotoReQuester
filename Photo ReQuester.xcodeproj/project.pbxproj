@@ -47,7 +47,7 @@
 		8045CB4F1D68A78B00C84A3C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB4A1D68A78B00C84A3C /* UIImage+ImageEffects.m */; };
 		8045CB531D68B1CA00C84A3C /* PQRSellerListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB521D68B1CA00C84A3C /* PQRSellerListTableViewCell.m */; };
 		8045CB561D68CA5C00C84A3C /* PQRLocalRequestDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB551D68CA5C00C84A3C /* PQRLocalRequestDetailView.m */; };
-		FC64BB7B4C7862344823E53D /* libPods-Photo ReQuester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE63C65DB679FF2904773FDE /* libPods-Photo ReQuester.a */; };
+		8946A238BDAC5F7AD3EE446F /* libPods-Photo ReQuester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F19C487208F3B8D1669FEC /* libPods-Photo ReQuester.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +72,8 @@
 		2FF32B6A1D68EC7B00E1AEE3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		2FF32B6B1D68EC7B00E1AEE3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		2FF32B6C1D68EC7B00E1AEE3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		45705B3F9C0328E0B4DBA886 /* Pods-Photo ReQuester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo ReQuester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester.debug.xcconfig"; sourceTree = "<group>"; };
+		4D434FCCBFC44F3F6FBFEBFA /* Pods-Photo ReQuester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo ReQuester.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester.release.xcconfig"; sourceTree = "<group>"; };
 		8045CAB91D67DB5100C84A3C /* Photo ReQuester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo ReQuester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8045CABD1D67DB5100C84A3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8045CABF1D67DB5100C84A3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,9 +148,7 @@
 		8045CB521D68B1CA00C84A3C /* PQRSellerListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerListTableViewCell.m; sourceTree = "<group>"; };
 		8045CB541D68CA5C00C84A3C /* PQRLocalRequestDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRLocalRequestDetailView.h; sourceTree = "<group>"; };
 		8045CB551D68CA5C00C84A3C /* PQRLocalRequestDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRLocalRequestDetailView.m; sourceTree = "<group>"; };
-		98138E8F8F455D3BEA20C5BD /* Pods-Photo ReQuester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo ReQuester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester.debug.xcconfig"; sourceTree = "<group>"; };
-		DE63C65DB679FF2904773FDE /* libPods-Photo ReQuester.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Photo ReQuester.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBB234C97588DC7B338E5CEC /* Pods-Photo ReQuester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo ReQuester.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester.release.xcconfig"; sourceTree = "<group>"; };
+		F7F19C487208F3B8D1669FEC /* libPods-Photo ReQuester.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Photo ReQuester.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC64BB7B4C7862344823E53D /* libPods-Photo ReQuester.a in Frameworks */,
+				8946A238BDAC5F7AD3EE446F /* libPods-Photo ReQuester.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,13 +177,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		78F49569DE67D1DE38FDCAE3 /* Pods */ = {
+		43BC5D3C0F126096707A149B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98138E8F8F455D3BEA20C5BD /* Pods-Photo ReQuester.debug.xcconfig */,
-				EBB234C97588DC7B338E5CEC /* Pods-Photo ReQuester.release.xcconfig */,
+				F7F19C487208F3B8D1669FEC /* libPods-Photo ReQuester.a */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8045CAB01D67DB5100C84A3C = {
@@ -194,8 +193,8 @@
 				8045CAD81D67DB5100C84A3C /* Photo ReQuesterTests */,
 				8045CAE31D67DB5100C84A3C /* Photo ReQuesterUITests */,
 				8045CABA1D67DB5100C84A3C /* Products */,
-				78F49569DE67D1DE38FDCAE3 /* Pods */,
-				D87834952A30062E5EA9CAAE /* Frameworks */,
+				8D978F10F07FAE9E8E6EB3F4 /* Pods */,
+				43BC5D3C0F126096707A149B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -394,12 +393,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D87834952A30062E5EA9CAAE /* Frameworks */ = {
+		8D978F10F07FAE9E8E6EB3F4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DE63C65DB679FF2904773FDE /* libPods-Photo ReQuester.a */,
+				45705B3F9C0328E0B4DBA886 /* Pods-Photo ReQuester.debug.xcconfig */,
+				4D434FCCBFC44F3F6FBFEBFA /* Pods-Photo ReQuester.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,12 +409,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8045CAE91D67DB5100C84A3C /* Build configuration list for PBXNativeTarget "Photo ReQuester" */;
 			buildPhases = (
-				53C37141B06D3C70BFB4A43F /* Check Pods Manifest.lock */,
+				706BF7C3A8B00243EEF25DBF /* [CP] Check Pods Manifest.lock */,
 				8045CAB51D67DB5100C84A3C /* Sources */,
 				8045CAB61D67DB5100C84A3C /* Frameworks */,
 				8045CAB71D67DB5100C84A3C /* Resources */,
-				D270B1805CF112A41618798B /* Embed Pods Frameworks */,
-				E47D33EFE82A12A6F00AFB0C /* Copy Pods Resources */,
+				95D8E6988E59858B0733BE8D /* [CP] Embed Pods Frameworks */,
+				FFCE3606F8D7D4AA411DA1F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -472,7 +472,7 @@
 				TargetAttributes = {
 					8045CAB81D67DB5100C84A3C = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = EJLR2RPSV2;
+						DevelopmentTeam = 5HSHP48M6L;
 					};
 					8045CAD41D67DB5100C84A3C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -534,14 +534,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53C37141B06D3C70BFB4A43F /* Check Pods Manifest.lock */ = {
+		706BF7C3A8B00243EEF25DBF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,14 +549,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D270B1805CF112A41618798B /* Embed Pods Frameworks */ = {
+		95D8E6988E59858B0733BE8D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,14 +564,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E47D33EFE82A12A6F00AFB0C /* Copy Pods Resources */ = {
+		FFCE3606F8D7D4AA411DA1F7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,27 +759,33 @@
 		};
 		8045CAEA1D67DB5100C84A3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98138E8F8F455D3BEA20C5BD /* Pods-Photo ReQuester.debug.xcconfig */;
+			baseConfigurationReference = 45705B3F9C0328E0B4DBA886 /* Pods-Photo ReQuester.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				INFOPLIST_FILE = "Photo ReQuester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Photo-ReQuester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		8045CAEB1D67DB5100C84A3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBB234C97588DC7B338E5CEC /* Pods-Photo ReQuester.release.xcconfig */;
+			baseConfigurationReference = 4D434FCCBFC44F3F6FBFEBFA /* Pods-Photo ReQuester.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				INFOPLIST_FILE = "Photo ReQuester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Photo-ReQuester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

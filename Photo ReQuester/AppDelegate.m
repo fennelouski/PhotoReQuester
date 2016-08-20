@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Google/SignIn.h>
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,10 +27,17 @@
     
     [GIDSignIn sharedInstance].clientID = @"790255065122-klm24fmh4bd5lqpnc25jutf7egj2l0qn.apps.googleusercontent.com";
 
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] initWithNibName:NSStringFromClass([LoginViewController class]) bundle:nil]];
+    if ([defaults objectForKey:@"token"]) {
+        self.window.rootViewController = [[ViewController alloc] init];
+    } else {
+        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] initWithNibName:NSStringFromClass([LoginViewController class]) bundle:nil]];
+        
+        self.window.rootViewController = navigationController;
 
-    self.window.rootViewController = navigationController;
+    }
+    
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
