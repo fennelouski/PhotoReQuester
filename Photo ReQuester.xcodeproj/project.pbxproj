@@ -26,6 +26,22 @@
 		8045CB101D68199200C84A3C /* PQRSellerListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB0F1D68199200C84A3C /* PQRSellerListTableView.m */; };
 		8045CB161D681B8A00C84A3C /* PQRLocalRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB151D681B8A00C84A3C /* PQRLocalRequestModel.m */; };
 		8045CB191D681BEF00C84A3C /* PQRCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB181D681BEF00C84A3C /* PQRCurrency.m */; };
+		8045CB341D68A74F00C84A3C /* ALUSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB1C1D68A74F00C84A3C /* ALUSettingsView.m */; };
+		8045CB351D68A74F00C84A3C /* MultiSelectSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB1F1D68A74F00C84A3C /* MultiSelectSegmentedControl.m */; };
+		8045CB361D68A74F00C84A3C /* NGAParallaxMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB221D68A74F00C84A3C /* NGAParallaxMotion.m */; };
+		8045CB371D68A74F00C84A3C /* NKFColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB251D68A74F00C84A3C /* NKFColor+AppColors.m */; };
+		8045CB381D68A74F00C84A3C /* NKFColor+Companies.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB271D68A74F00C84A3C /* NKFColor+Companies.m */; };
+		8045CB391D68A74F00C84A3C /* NKFColor+Dates.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB291D68A74F00C84A3C /* NKFColor+Dates.m */; };
+		8045CB3A1D68A74F00C84A3C /* NKFColor+SportsTeams.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB2B1D68A74F00C84A3C /* NKFColor+SportsTeams.m */; };
+		8045CB3B1D68A74F00C84A3C /* NKFColor+Universities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB2D1D68A74F00C84A3C /* NKFColor+Universities.m */; };
+		8045CB3C1D68A74F00C84A3C /* NKFColor+WikipediaColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB2F1D68A74F00C84A3C /* NKFColor+WikipediaColors.m */; };
+		8045CB3D1D68A74F00C84A3C /* NKFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB311D68A74F00C84A3C /* NKFColor.m */; };
+		8045CB3E1D68A74F00C84A3C /* NSString+AppFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB331D68A74F00C84A3C /* NSString+AppFunctions.m */; };
+		8045CB4B1D68A78B00C84A3C /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB421D68A78B00C84A3C /* UIColor+AppColors.m */; };
+		8045CB4C1D68A78B00C84A3C /* UIColor+BrandColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB441D68A78B00C84A3C /* UIColor+BrandColors.m */; };
+		8045CB4D1D68A78B00C84A3C /* UIFont+AppFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB461D68A78B00C84A3C /* UIFont+AppFonts.m */; };
+		8045CB4E1D68A78B00C84A3C /* UIFont+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB481D68A78B00C84A3C /* UIFont+Custom.m */; };
+		8045CB4F1D68A78B00C84A3C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB4A1D68A78B00C84A3C /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +99,39 @@
 		8045CB151D681B8A00C84A3C /* PQRLocalRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRLocalRequestModel.m; sourceTree = "<group>"; };
 		8045CB171D681BEF00C84A3C /* PQRCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRCurrency.h; sourceTree = "<group>"; };
 		8045CB181D681BEF00C84A3C /* PQRCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRCurrency.m; sourceTree = "<group>"; };
+		8045CB1B1D68A74F00C84A3C /* ALUSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALUSettingsView.h; sourceTree = "<group>"; };
+		8045CB1C1D68A74F00C84A3C /* ALUSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALUSettingsView.m; sourceTree = "<group>"; };
+		8045CB1E1D68A74F00C84A3C /* MultiSelectSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelectSegmentedControl.h; sourceTree = "<group>"; };
+		8045CB1F1D68A74F00C84A3C /* MultiSelectSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelectSegmentedControl.m; sourceTree = "<group>"; };
+		8045CB211D68A74F00C84A3C /* NGAParallaxMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGAParallaxMotion.h; sourceTree = "<group>"; };
+		8045CB221D68A74F00C84A3C /* NGAParallaxMotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGAParallaxMotion.m; sourceTree = "<group>"; };
+		8045CB241D68A74F00C84A3C /* NKFColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NKFColor+AppColors.h"; sourceTree = "<group>"; };
+		8045CB251D68A74F00C84A3C /* NKFColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NKFColor+AppColors.m"; sourceTree = "<group>"; };
+		8045CB261D68A74F00C84A3C /* NKFColor+Companies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NKFColor+Companies.h"; sourceTree = "<group>"; };
+		8045CB271D68A74F00C84A3C /* NKFColor+Companies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NKFColor+Companies.m"; sourceTree = "<group>"; };
+		8045CB281D68A74F00C84A3C /* NKFColor+Dates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NKFColor+Dates.h"; sourceTree = "<group>"; };
+		8045CB291D68A74F00C84A3C /* NKFColor+Dates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NKFColor+Dates.m"; sourceTree = "<group>"; };
+		8045CB2A1D68A74F00C84A3C /* NKFColor+SportsTeams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NKFColor+SportsTeams.h"; sourceTree = "<group>"; };
+		8045CB2B1D68A74F00C84A3C /* NKFColor+SportsTeams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NKFColor+SportsTeams.m"; sourceTree = "<group>"; };
+		8045CB2C1D68A74F00C84A3C /* NKFColor+Universities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NKFColor+Universities.h"; sourceTree = "<group>"; };
+		8045CB2D1D68A74F00C84A3C /* NKFColor+Universities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NKFColor+Universities.m"; sourceTree = "<group>"; };
+		8045CB2E1D68A74F00C84A3C /* NKFColor+WikipediaColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NKFColor+WikipediaColors.h"; sourceTree = "<group>"; };
+		8045CB2F1D68A74F00C84A3C /* NKFColor+WikipediaColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NKFColor+WikipediaColors.m"; sourceTree = "<group>"; };
+		8045CB301D68A74F00C84A3C /* NKFColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKFColor.h; sourceTree = "<group>"; };
+		8045CB311D68A74F00C84A3C /* NKFColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKFColor.m; sourceTree = "<group>"; };
+		8045CB321D68A74F00C84A3C /* NSString+AppFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AppFunctions.h"; sourceTree = "<group>"; };
+		8045CB331D68A74F00C84A3C /* NSString+AppFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AppFunctions.m"; sourceTree = "<group>"; };
+		8045CB411D68A78B00C84A3C /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
+		8045CB421D68A78B00C84A3C /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
+		8045CB431D68A78B00C84A3C /* UIColor+BrandColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BrandColors.h"; sourceTree = "<group>"; };
+		8045CB441D68A78B00C84A3C /* UIColor+BrandColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BrandColors.m"; sourceTree = "<group>"; };
+		8045CB451D68A78B00C84A3C /* UIFont+AppFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+AppFonts.h"; sourceTree = "<group>"; };
+		8045CB461D68A78B00C84A3C /* UIFont+AppFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AppFonts.m"; sourceTree = "<group>"; };
+		8045CB471D68A78B00C84A3C /* UIFont+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Custom.h"; sourceTree = "<group>"; };
+		8045CB481D68A78B00C84A3C /* UIFont+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Custom.m"; sourceTree = "<group>"; };
+		8045CB491D68A78B00C84A3C /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		8045CB4A1D68A78B00C84A3C /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		8045CB501D68A86D00C84A3C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,11 +184,13 @@
 			children = (
 				8045CABF1D67DB5100C84A3C /* AppDelegate.h */,
 				8045CAC01D67DB5100C84A3C /* AppDelegate.m */,
+				8045CB501D68A86D00C84A3C /* PrefixHeader.pch */,
 				8045CAC21D67DB5100C84A3C /* ViewController.h */,
 				8045CAC31D67DB5100C84A3C /* ViewController.m */,
 				8045CB0A1D680A2700C84A3C /* Views */,
 				8045CB031D68074600C84A3C /* Controllers */,
 				8045CAFF1D67F07C00C84A3C /* Model */,
+				8045CB3F1D68A75500C84A3C /* Extra Files */,
 				8045CAC51D67DB5100C84A3C /* Main.storyboard */,
 				8045CACB1D67DB5100C84A3C /* Assets.xcassets */,
 				8045CACD1D67DB5100C84A3C /* LaunchScreen.storyboard */,
@@ -225,6 +276,85 @@
 				8045CB0F1D68199200C84A3C /* PQRSellerListTableView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		8045CB1A1D68A74F00C84A3C /* ALUSettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				8045CB1B1D68A74F00C84A3C /* ALUSettingsView.h */,
+				8045CB1C1D68A74F00C84A3C /* ALUSettingsView.m */,
+			);
+			path = ALUSettingsView;
+			sourceTree = "<group>";
+		};
+		8045CB1D1D68A74F00C84A3C /* MultiSelectSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				8045CB1E1D68A74F00C84A3C /* MultiSelectSegmentedControl.h */,
+				8045CB1F1D68A74F00C84A3C /* MultiSelectSegmentedControl.m */,
+			);
+			path = MultiSelectSegmentedControl;
+			sourceTree = "<group>";
+		};
+		8045CB201D68A74F00C84A3C /* NGAParallaxMotion */ = {
+			isa = PBXGroup;
+			children = (
+				8045CB211D68A74F00C84A3C /* NGAParallaxMotion.h */,
+				8045CB221D68A74F00C84A3C /* NGAParallaxMotion.m */,
+			);
+			path = NGAParallaxMotion;
+			sourceTree = "<group>";
+		};
+		8045CB231D68A74F00C84A3C /* NKFColor */ = {
+			isa = PBXGroup;
+			children = (
+				8045CB241D68A74F00C84A3C /* NKFColor+AppColors.h */,
+				8045CB251D68A74F00C84A3C /* NKFColor+AppColors.m */,
+				8045CB261D68A74F00C84A3C /* NKFColor+Companies.h */,
+				8045CB271D68A74F00C84A3C /* NKFColor+Companies.m */,
+				8045CB281D68A74F00C84A3C /* NKFColor+Dates.h */,
+				8045CB291D68A74F00C84A3C /* NKFColor+Dates.m */,
+				8045CB2A1D68A74F00C84A3C /* NKFColor+SportsTeams.h */,
+				8045CB2B1D68A74F00C84A3C /* NKFColor+SportsTeams.m */,
+				8045CB2C1D68A74F00C84A3C /* NKFColor+Universities.h */,
+				8045CB2D1D68A74F00C84A3C /* NKFColor+Universities.m */,
+				8045CB2E1D68A74F00C84A3C /* NKFColor+WikipediaColors.h */,
+				8045CB2F1D68A74F00C84A3C /* NKFColor+WikipediaColors.m */,
+				8045CB301D68A74F00C84A3C /* NKFColor.h */,
+				8045CB311D68A74F00C84A3C /* NKFColor.m */,
+				8045CB321D68A74F00C84A3C /* NSString+AppFunctions.h */,
+				8045CB331D68A74F00C84A3C /* NSString+AppFunctions.m */,
+			);
+			path = NKFColor;
+			sourceTree = "<group>";
+		};
+		8045CB3F1D68A75500C84A3C /* Extra Files */ = {
+			isa = PBXGroup;
+			children = (
+				8045CB401D68A78B00C84A3C /* Extensions */,
+				8045CB1A1D68A74F00C84A3C /* ALUSettingsView */,
+				8045CB1D1D68A74F00C84A3C /* MultiSelectSegmentedControl */,
+				8045CB201D68A74F00C84A3C /* NGAParallaxMotion */,
+				8045CB231D68A74F00C84A3C /* NKFColor */,
+			);
+			name = "Extra Files";
+			sourceTree = "<group>";
+		};
+		8045CB401D68A78B00C84A3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8045CB411D68A78B00C84A3C /* UIColor+AppColors.h */,
+				8045CB421D68A78B00C84A3C /* UIColor+AppColors.m */,
+				8045CB431D68A78B00C84A3C /* UIColor+BrandColors.h */,
+				8045CB441D68A78B00C84A3C /* UIColor+BrandColors.m */,
+				8045CB451D68A78B00C84A3C /* UIFont+AppFonts.h */,
+				8045CB461D68A78B00C84A3C /* UIFont+AppFonts.m */,
+				8045CB471D68A78B00C84A3C /* UIFont+Custom.h */,
+				8045CB481D68A78B00C84A3C /* UIFont+Custom.m */,
+				8045CB491D68A78B00C84A3C /* UIImage+ImageEffects.h */,
+				8045CB4A1D68A78B00C84A3C /* UIImage+ImageEffects.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,18 +487,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8045CB351D68A74F00C84A3C /* MultiSelectSegmentedControl.m in Sources */,
 				8045CAC41D67DB5100C84A3C /* ViewController.m in Sources */,
+				8045CB4C1D68A78B00C84A3C /* UIColor+BrandColors.m in Sources */,
 				8045CACA1D67DB5100C84A3C /* Photo_ReQuester.xcdatamodeld in Sources */,
+				8045CB4B1D68A78B00C84A3C /* UIColor+AppColors.m in Sources */,
+				8045CB3D1D68A74F00C84A3C /* NKFColor.m in Sources */,
+				8045CB371D68A74F00C84A3C /* NKFColor+AppColors.m in Sources */,
 				8045CB191D681BEF00C84A3C /* PQRCurrency.m in Sources */,
+				8045CB4E1D68A78B00C84A3C /* UIFont+Custom.m in Sources */,
 				8045CB061D68087800C84A3C /* PQRUserManager.m in Sources */,
 				8045CB0D1D6818CE00C84A3C /* PQRSellerListViewController.m in Sources */,
+				8045CB361D68A74F00C84A3C /* NGAParallaxMotion.m in Sources */,
+				8045CB4D1D68A78B00C84A3C /* UIFont+AppFonts.m in Sources */,
 				8045CB101D68199200C84A3C /* PQRSellerListTableView.m in Sources */,
 				8045CAC11D67DB5100C84A3C /* AppDelegate.m in Sources */,
 				8045CAFE1D67F07700C84A3C /* PQRLocationManager.m in Sources */,
 				8045CB091D680A2100C84A3C /* PQRMainFooterToolbar.m in Sources */,
+				8045CB3C1D68A74F00C84A3C /* NKFColor+WikipediaColors.m in Sources */,
 				8045CABE1D67DB5100C84A3C /* main.m in Sources */,
+				8045CB391D68A74F00C84A3C /* NKFColor+Dates.m in Sources */,
+				8045CB3A1D68A74F00C84A3C /* NKFColor+SportsTeams.m in Sources */,
+				8045CB341D68A74F00C84A3C /* ALUSettingsView.m in Sources */,
+				8045CB3E1D68A74F00C84A3C /* NSString+AppFunctions.m in Sources */,
 				8045CAFB1D67EFB500C84A3C /* PQRSellerDataManager.m in Sources */,
+				8045CB381D68A74F00C84A3C /* NKFColor+Companies.m in Sources */,
 				8045CB021D68074100C84A3C /* PQRSellerMapViewController.m in Sources */,
+				8045CB4F1D68A78B00C84A3C /* UIImage+ImageEffects.m in Sources */,
+				8045CB3B1D68A74F00C84A3C /* NKFColor+Universities.m in Sources */,
 				8045CAF71D67EF0400C84A3C /* PQRPhotoModel.m in Sources */,
 				8045CB161D681B8A00C84A3C /* PQRLocalRequestModel.m in Sources */,
 			);
