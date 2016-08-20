@@ -23,6 +23,7 @@
 		8045CB061D68087800C84A3C /* PQRUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB051D68087800C84A3C /* PQRUserManager.m */; };
 		8045CB091D680A2100C84A3C /* PQRMainFooterToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB081D680A2100C84A3C /* PQRMainFooterToolbar.m */; };
 		8045CB0D1D6818CE00C84A3C /* PQRSellerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB0C1D6818CE00C84A3C /* PQRSellerListViewController.m */; };
+		8045CB101D68199200C84A3C /* PQRSellerListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB0F1D68199200C84A3C /* PQRSellerListTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		8045CB081D680A2100C84A3C /* PQRMainFooterToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRMainFooterToolbar.m; sourceTree = "<group>"; };
 		8045CB0B1D6818CE00C84A3C /* PQRSellerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRSellerListViewController.h; sourceTree = "<group>"; };
 		8045CB0C1D6818CE00C84A3C /* PQRSellerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerListViewController.m; sourceTree = "<group>"; };
+		8045CB0E1D68199200C84A3C /* PQRSellerListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRSellerListTableView.h; sourceTree = "<group>"; };
+		8045CB0F1D68199200C84A3C /* PQRSellerListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerListTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +211,8 @@
 			children = (
 				8045CB071D680A2100C84A3C /* PQRMainFooterToolbar.h */,
 				8045CB081D680A2100C84A3C /* PQRMainFooterToolbar.m */,
+				8045CB0E1D68199200C84A3C /* PQRSellerListTableView.h */,
+				8045CB0F1D68199200C84A3C /* PQRSellerListTableView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				8045CACA1D67DB5100C84A3C /* Photo_ReQuester.xcdatamodeld in Sources */,
 				8045CB061D68087800C84A3C /* PQRUserManager.m in Sources */,
 				8045CB0D1D6818CE00C84A3C /* PQRSellerListViewController.m in Sources */,
+				8045CB101D68199200C84A3C /* PQRSellerListTableView.m in Sources */,
 				8045CAC11D67DB5100C84A3C /* AppDelegate.m in Sources */,
 				8045CAFE1D67F07700C84A3C /* PQRLocationManager.m in Sources */,
 				8045CB091D680A2100C84A3C /* PQRMainFooterToolbar.m in Sources */,

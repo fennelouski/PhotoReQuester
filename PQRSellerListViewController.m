@@ -8,7 +8,11 @@
 
 #import "PQRSellerListViewController.h"
 
+#import "PQRSellerListTableView.h"
+
 @interface PQRSellerListViewController ()
+
+@property (nonatomic, strong) PQRSellerListTableView *tableView;
 
 @end
 
@@ -28,21 +32,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    [self.view addSubview:self.tableView];
 }
+
+
+
+
+
+#pragma mark - Subviews
+
+- (PQRSellerListTableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[PQRSellerListTableView alloc] initWithFrame:self.tableViewFrame];
+        _tableView.contentInset = self.tableViewInsets;
+        _tableView.scrollIndicatorInsets = _tableView.contentInset;
+    }
+
+    return _tableView;
+}
+
+- (CGRect)tableViewFrame {
+    CGRect frame = self.parentViewController.view.bounds;
+
+    return frame;
+}
+
+- (UIEdgeInsets)tableViewInsets {
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+
+    insets.top = 60.0f;
+    insets.bottom = 44.0f;
+
+    return insets;
+}
+
+
+#pragma mark - Memory Warning
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
