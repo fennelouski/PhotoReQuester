@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "PQRLocationManager.h"
+#import "LoginViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <Google/SignIn.h>
 
 @interface AppDelegate ()
 
@@ -20,8 +23,32 @@
     // Override point for customization after application launch.
 
     [PQRLocationManager currentCoordinate];
+    
+    [GIDSignIn sharedInstance].clientID = @"790255065122-klm24fmh4bd5lqpnc25jutf7egj2l0qn.apps.googleusercontent.com";
+
+    
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] initWithNibName:NSStringFromClass([LoginViewController class]) bundle:nil]];
+
+    self.window.rootViewController = navigationController;
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
 
     return YES;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -38,14 +65,18 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+    return [[GIDSignIn sharedInstance] handleURL:url
+                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                      annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 }
 
 #pragma mark - Core Data stack

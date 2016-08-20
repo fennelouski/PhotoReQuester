@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F93516A1D68F1F70000C4D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F9351691D68F1F70000C4D1 /* GoogleService-Info.plist */; };
+		2FF32B6D1D68EC7B00E1AEE3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF32B6B1D68EC7B00E1AEE3 /* LoginViewController.m */; };
+		2FF32B6E1D68EC7B00E1AEE3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FF32B6C1D68EC7B00E1AEE3 /* LoginViewController.xib */; };
 		8045CABE1D67DB5100C84A3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CABD1D67DB5100C84A3C /* main.m */; };
 		8045CAC11D67DB5100C84A3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAC01D67DB5100C84A3C /* AppDelegate.m */; };
 		8045CAC41D67DB5100C84A3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CAC31D67DB5100C84A3C /* ViewController.m */; };
@@ -44,6 +47,7 @@
 		8045CB4F1D68A78B00C84A3C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB4A1D68A78B00C84A3C /* UIImage+ImageEffects.m */; };
 		8045CB531D68B1CA00C84A3C /* PQRSellerListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB521D68B1CA00C84A3C /* PQRSellerListTableViewCell.m */; };
 		8045CB561D68CA5C00C84A3C /* PQRLocalRequestDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB551D68CA5C00C84A3C /* PQRLocalRequestDetailView.m */; };
+		FC64BB7B4C7862344823E53D /* libPods-Photo ReQuester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE63C65DB679FF2904773FDE /* libPods-Photo ReQuester.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F9351691D68F1F70000C4D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2FF32B6A1D68EC7B00E1AEE3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		2FF32B6B1D68EC7B00E1AEE3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		2FF32B6C1D68EC7B00E1AEE3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		8045CAB91D67DB5100C84A3C /* Photo ReQuester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo ReQuester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8045CABD1D67DB5100C84A3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8045CABF1D67DB5100C84A3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +146,9 @@
 		8045CB521D68B1CA00C84A3C /* PQRSellerListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerListTableViewCell.m; sourceTree = "<group>"; };
 		8045CB541D68CA5C00C84A3C /* PQRLocalRequestDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRLocalRequestDetailView.h; sourceTree = "<group>"; };
 		8045CB551D68CA5C00C84A3C /* PQRLocalRequestDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRLocalRequestDetailView.m; sourceTree = "<group>"; };
+		98138E8F8F455D3BEA20C5BD /* Pods-Photo ReQuester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo ReQuester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester.debug.xcconfig"; sourceTree = "<group>"; };
+		DE63C65DB679FF2904773FDE /* libPods-Photo ReQuester.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Photo ReQuester.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBB234C97588DC7B338E5CEC /* Pods-Photo ReQuester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo ReQuester.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC64BB7B4C7862344823E53D /* libPods-Photo ReQuester.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,13 +177,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78F49569DE67D1DE38FDCAE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98138E8F8F455D3BEA20C5BD /* Pods-Photo ReQuester.debug.xcconfig */,
+				EBB234C97588DC7B338E5CEC /* Pods-Photo ReQuester.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8045CAB01D67DB5100C84A3C = {
 			isa = PBXGroup;
 			children = (
+				2F9351691D68F1F70000C4D1 /* GoogleService-Info.plist */,
 				8045CABB1D67DB5100C84A3C /* Photo ReQuester */,
 				8045CAD81D67DB5100C84A3C /* Photo ReQuesterTests */,
 				8045CAE31D67DB5100C84A3C /* Photo ReQuesterUITests */,
 				8045CABA1D67DB5100C84A3C /* Products */,
+				78F49569DE67D1DE38FDCAE3 /* Pods */,
+				D87834952A30062E5EA9CAAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,6 +292,9 @@
 				8045CB011D68074100C84A3C /* PQRSellerMapViewController.m */,
 				8045CB0B1D6818CE00C84A3C /* PQRSellerListViewController.h */,
 				8045CB0C1D6818CE00C84A3C /* PQRSellerListViewController.m */,
+				2FF32B6A1D68EC7B00E1AEE3 /* LoginViewController.h */,
+				2FF32B6B1D68EC7B00E1AEE3 /* LoginViewController.m */,
+				2FF32B6C1D68EC7B00E1AEE3 /* LoginViewController.xib */,
 			);
 			name = Controllers;
 			path = ..;
@@ -367,6 +394,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D87834952A30062E5EA9CAAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE63C65DB679FF2904773FDE /* libPods-Photo ReQuester.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,9 +409,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8045CAE91D67DB5100C84A3C /* Build configuration list for PBXNativeTarget "Photo ReQuester" */;
 			buildPhases = (
+				53C37141B06D3C70BFB4A43F /* Check Pods Manifest.lock */,
 				8045CAB51D67DB5100C84A3C /* Sources */,
 				8045CAB61D67DB5100C84A3C /* Frameworks */,
 				8045CAB71D67DB5100C84A3C /* Resources */,
+				D270B1805CF112A41618798B /* Embed Pods Frameworks */,
+				E47D33EFE82A12A6F00AFB0C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -471,7 +509,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FF32B6E1D68EC7B00E1AEE3 /* LoginViewController.xib in Resources */,
 				8045CACF1D67DB5100C84A3C /* LaunchScreen.storyboard in Resources */,
+				2F93516A1D68F1F70000C4D1 /* GoogleService-Info.plist in Resources */,
 				8045CACC1D67DB5100C84A3C /* Assets.xcassets in Resources */,
 				8045CAC71D67DB5100C84A3C /* Main.storyboard in Resources */,
 			);
@@ -492,6 +532,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53C37141B06D3C70BFB4A43F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D270B1805CF112A41618798B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E47D33EFE82A12A6F00AFB0C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo ReQuester/Pods-Photo ReQuester-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8045CAB51D67DB5100C84A3C /* Sources */ = {
@@ -518,6 +606,7 @@
 				8045CB091D680A2100C84A3C /* PQRMainFooterToolbar.m in Sources */,
 				8045CB3C1D68A74F00C84A3C /* NKFColor+WikipediaColors.m in Sources */,
 				8045CABE1D67DB5100C84A3C /* main.m in Sources */,
+				2FF32B6D1D68EC7B00E1AEE3 /* LoginViewController.m in Sources */,
 				8045CB391D68A74F00C84A3C /* NKFColor+Dates.m in Sources */,
 				8045CB3A1D68A74F00C84A3C /* NKFColor+SportsTeams.m in Sources */,
 				8045CB341D68A74F00C84A3C /* ALUSettingsView.m in Sources */,
@@ -670,6 +759,7 @@
 		};
 		8045CAEA1D67DB5100C84A3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98138E8F8F455D3BEA20C5BD /* Pods-Photo ReQuester.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
@@ -682,6 +772,7 @@
 		};
 		8045CAEB1D67DB5100C84A3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBB234C97588DC7B338E5CEC /* Pods-Photo ReQuester.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
