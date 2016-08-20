@@ -17,6 +17,17 @@
 
 @implementation PQRSellerMapViewController
 
++ (instancetype)sharedMapController {
+    static PQRSellerMapViewController *sharedMapController;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMapController = [[PQRSellerMapViewController alloc] init];
+    });
+
+    return sharedMapController;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -39,6 +50,8 @@
     if (!_map) {
         _map = [[MKMapView alloc] initWithFrame:self.mapFrame];
         _map.delegate = self;
+        _map.showsUserLocation = YES;
+        _map.userTrackingMode = MKUserTrackingModeFollowWithHeading;
     }
 
     return _map;

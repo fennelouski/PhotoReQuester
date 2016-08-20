@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) UIToolbar *footerToolbar;
 
++ (instancetype)sharedMapController;
+
 @end

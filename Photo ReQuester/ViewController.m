@@ -42,8 +42,11 @@
 #pragma mark - PQRMainFooterToolbarDelegate
 
 - (void)updateChildren {
-    [self pushViewController:[self currentChildViewController]
-                    animated:YES];
+    UIViewController *childVC = [self currentChildViewController];
+    if (![self.childViewControllers containsObject:childVC]) {
+        [self pushViewController:childVC
+                        animated:YES];
+    }
 }
 
 - (UIViewController *)currentChildViewController {
@@ -52,7 +55,7 @@
     } else if (PQRUserManager.isSeller) {
         switch (PQRSellerDataManager.currentVCType) {
             case PQRSellerVCMap:
-                return PQRSellerMapViewController.new;
+                return PQRSellerMapViewController.sharedMapController;
                 break;
 
             case PQRSellerVCList:
