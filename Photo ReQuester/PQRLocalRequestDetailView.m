@@ -12,7 +12,7 @@
 
 #import "PQRLocationManager.h"
 
-@interface PQRLocalRequestDetailView () <MKMapViewDelegate>
+@interface PQRLocalRequestDetailView () <MKMapViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UILabel *titleLabel;
 
@@ -23,6 +23,8 @@
 
 @implementation PQRLocalRequestDetailView {
     PQRLocalRequestModel *_localRequest;
+    MKPointAnnotation *_pointAnnotation;
+    UIImagePickerController *_imagePickerController;
 }
 
 - (void)layoutSubviews {
@@ -86,6 +88,13 @@
     _localRequest = localRequest;
 
     [self layoutSubviews];
+
+    [self.mapView removeAnnotation:_pointAnnotation];
+    _pointAnnotation = [[MKPointAnnotation alloc] init];
+    _pointAnnotation.coordinate = localRequest.coordinate;
+    _pointAnnotation.title = localRequest.title;
+    _pointAnnotation.subtitle = [NSString stringWithFormat:@"%@", localRequest.bounty.stringExpression];
+    [self.mapView addAnnotation:_pointAnnotation];
 }
 
 
@@ -115,56 +124,54 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    NSString *title = view.annotation.title;
-    NSString *message = @"Get driving directions to this spot?";
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
 
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:^(UIAlertAction * _Nonnull action) {
+    NSLog(@"Taking photo for %g, %g", _localRequest.coordinate.latitude, _localRequest.coordinate.longitude);
 
-                                                         }];
-    [alertController addAction:cancelAction];
+    [self takePhoto:nil];
+}
 
-    NSString *appleMapsTitle = @"Maps";
+- (void)takePhoto:(id)sender {
+    // Lazily allocate image picker controller
+    if (!_imagePickerController) {
+        _imagePickerController = [[UIImagePickerController alloc] init];
 
-    if ([[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"comgooglemaps://"]]) {
-        UIAlertAction *googleMapsAction = [UIAlertAction actionWithTitle:@"Google Maps"
-                                                                   style:UIAlertActionStyleDefault
-                                                                 handler:^(UIAlertAction *action) {
-                                                                     NSString *googleMapsURLString = [NSString stringWithFormat:@"comgooglemaps://?saddr=%f,%f&daddr=%f,%f&directionsmode=driving",
-                                                                                                      self.mapView.userLocation.coordinate.latitude,
-                                                                                                      self.mapView.userLocation.coordinate.longitude,
-                                                                                                      view.annotation.coordinate.latitude,
-                                                                                                      view.annotation.coordinate.longitude];
-                                                                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapsURLString]];
-                                                                 }];
-        [alertController addAction:googleMapsAction];
+        // If our device has a camera, we want to take a picture, otherwise, we just pick from
+        // photo library
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            [_imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
+        } else {
+            [_imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        }
 
-        appleMapsTitle = @"Apple Maps";
+        // image picker needs a delegate so we can respond to its messages
+        [_imagePickerController setDelegate:self];
     }
-
-    UIAlertAction *appleMapsAction = [UIAlertAction actionWithTitle:appleMapsTitle
-                                                              style:UIAlertActionStyleDefault
-                                                            handler:^(UIAlertAction *action) {
-                                                                MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
-                                                                NSDictionary *addressDict = @{(NSString *)kABPersonAddressStreetKey : _localRequest.title};
-                                                                MKPlacemark *destinationPlaceMark = [[MKPlacemark alloc] initWithCoordinate:view.annotation.coordinate addressDictionary:addressDict];
-                                                                MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:destinationPlaceMark];
-                                                                
-                                                                NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
-                                                                [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
-                                                                               launchOptions:launchOptions];
-                                                            }];
-    [alertController addAction:appleMapsAction];
-    
-    [self.presentingViewController presentViewController:alertController
+    // Place image picker on the screen
+    [self.presentingViewController presentViewController:_imagePickerController
                                                 animated:YES
                                               completion:^{
 
                                               }];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [self hide];
+
+    [_imagePickerController dismissViewControllerAnimated:YES
+                                               completion:^{
+
+                                               }];
+
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self hide];
+
+    [_imagePickerController dismissViewControllerAnimated:YES
+                                               completion:^{
+
+                                               }];
 }
 
 

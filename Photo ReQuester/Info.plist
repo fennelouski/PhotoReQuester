@@ -22,10 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Maybe this will work?</string>
 	<key>NSLocationUsageDescription</key>
 	<string>NSLocationWhenInUseUsageDescription</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We'd like to use your location. \nDO IT!!!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please, sir, may I have another?</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

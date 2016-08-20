@@ -55,6 +55,14 @@
 }
 
 - (NSString *)stringExpression {
+    if (_cents == 0) {
+        return [NSString stringWithFormat:@"$%zd.00", _dollars];
+    }
+
+    if (_cents < 10) {
+        return [NSString stringWithFormat:@"$%zd.0%zd", _dollars, _cents];
+    }
+
     return [NSString stringWithFormat:@"$%zd.%zd", _dollars, _cents];
 }
 

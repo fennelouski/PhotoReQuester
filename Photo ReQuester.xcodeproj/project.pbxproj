@@ -434,6 +434,7 @@
 				TargetAttributes = {
 					8045CAB81D67DB5100C84A3C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EJLR2RPSV2;
 					};
 					8045CAD41D67DB5100C84A3C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -671,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				INFOPLIST_FILE = "Photo ReQuester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Photo-ReQuester";
@@ -682,6 +684,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				INFOPLIST_FILE = "Photo ReQuester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Photo-ReQuester";
