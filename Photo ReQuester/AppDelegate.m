@@ -29,16 +29,15 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([defaults objectForKey:@"token"]) {
+ //   if ([defaults objectForKey:@"token"]) {
         self.window.rootViewController = [[ViewController alloc] init];
-    } else {
-        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] initWithNibName:NSStringFromClass([LoginViewController class]) bundle:nil]];
-        
-        self.window.rootViewController = navigationController;
-
-    }
-    
-    
+//    } else {
+//        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] initWithNibName:NSStringFromClass([LoginViewController class]) bundle:nil]];
+//        
+//        self.window.rootViewController = navigationController;
+//
+//    }
+//    
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
 

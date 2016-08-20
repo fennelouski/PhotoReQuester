@@ -53,6 +53,55 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     }
     else {
         NSLog(@"token string = %@", result.token.tokenString);
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:@"http://172.16.81.127:3000/api/v1/auth/google"]];
+        [request setHTTPMethod:@"POST"];
+        
+        
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        
+        NSMutableDictionary * modelDictionary = [NSMutableDictionary new];
+//        modelDictionary[@"fb_access_token"] = user.profile.email;
+//        modelDictionary[@"fb_user_id"] = user.authentication.idToken;
+        
+        
+        NSError *writeError;
+        
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:modelDictionary options:NSJSONWritingPrettyPrinted error:&writeError];
+        
+        NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[jsonData length]];
+        
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setHTTPBody:jsonData];
+        
+        NSURLSessionDataTask *requestTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            
+            if (error == nil && (httpResponse.statusCode >= 200 && httpResponse.statusCode < 400)){
+                NSDictionary *jData =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                NSLog(@"Data = %@", jData);
+                
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                
+                // set the value
+                [defaults setObject:jData[@"token"] forKey:@"token"];
+                [defaults synchronize];
+                
+                [self.navigationController pushViewController:[[ViewController alloc] init] animated:YES];
+                
+            }
+            else {
+                
+            }
+        }];
+        
+        [requestTask resume];
+        
+
+        
     }
     
 }
@@ -82,7 +131,6 @@ didSignInForUser:(GIDGoogleUser *)user
     modelDictionary[@"email"] = user.profile.email;
     modelDictionary[@"google_id_token"] = user.authentication.idToken;
     
-    NSLog(@"google id token = %@", modelDictionary);
     
     NSError *writeError;
     
@@ -115,8 +163,6 @@ didSignInForUser:(GIDGoogleUser *)user
     }];
     
     [requestTask resume];
-    
-    NSLog(@"user_id = %@", user.userID);
 }
 
 - (void)signIn:(GIDSignIn *)signIn
