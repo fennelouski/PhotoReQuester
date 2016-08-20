@@ -67,10 +67,11 @@
             request.title = @"Take a photo for me!";
             request.request_id = @([NSString stringWithFormat:@"%d", i].hash).description;
             request.requestDescription = request.request_id;
-            request.bounty = [PQRCurrency currencyWithString:@(i).description];
+            request.bounty = [[PQRCurrency alloc] init];
+            request.bounty.absoluteCents = arc4random_uniform(6) * 25 + 25;
 
             request.coordinate = CLLocationCoordinate2DMake((float)arc4random_uniform(10000)/1000.0f - 5 + userCoordinate.latitude,
-                                                            (float)arc4random_uniform(20000)/1000.0f - 10 + userCoordinate.longitude);
+                                                            (float)arc4random_uniform(10000)/1000.0f - 9 + userCoordinate.longitude);
 
             while (!CLLocationCoordinate2DIsValid(request.coordinate)) {
                 request.coordinate = CLLocationCoordinate2DMake(arc4random_uniform(10) - 5 + userCoordinate.latitude,

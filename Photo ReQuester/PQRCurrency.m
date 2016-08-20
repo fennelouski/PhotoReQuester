@@ -54,6 +54,13 @@
     return _absoluteCents;
 }
 
+- (void)setAbsoluteCents:(NSInteger)absoluteCents {
+    _absoluteCents = absoluteCents;
+
+    _cents = _absoluteCents % 100;
+    _dollars = _absoluteCents / 100;
+}
+
 - (NSString *)stringExpression {
     if (_cents == 0) {
         return [NSString stringWithFormat:@"$%zd.00", _dollars];

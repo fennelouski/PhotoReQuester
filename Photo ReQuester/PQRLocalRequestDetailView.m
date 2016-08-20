@@ -14,10 +14,15 @@
 
 @interface PQRLocalRequestDetailView () <MKMapViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIToolbar *headerToolbar;
 
 @property (nonatomic, strong) MKMapView *mapView;
 
+@property (nonatomic, strong) UITextView *detailTextView;
+
+@property (nonatomic, strong) UILabel *bountyLabel;
+
+@property (nonatomic, strong) UIBarButtonItem *flexibleSpace, *cameraButton;
 
 @end
 
@@ -30,28 +35,32 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    self.titleLabel.text = _localRequest.title;
-    [self addSubview:self.titleLabel];
 
     if (CLLocationCoordinate2DIsValid(_localRequest.coordinate)) {
         self.mapView.region = [PQRLocationManager userRegionWithCoordinate:_localRequest.coordinate];
+        [self addSubview:self.mapView];
     } else {
-        NSLog(@"");
+        [self.mapView removeFromSuperview];
     }
-    [self addSubview:self.mapView];
+
+    [self addSubview:self.headerToolbar];
+
+    [self addSubview:self.detailTextView];
 }
 
 #pragma mark - Subviews
 
-- (UILabel *)titleLabel {
-    if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] initWithFrame:self.titleLabelFrame];
+- (UIToolbar *)headerToolbar {
+    if (!_headerToolbar) {
+        _headerToolbar = [[UIToolbar alloc] initWithFrame:self.headerToolbarFrame];
+        [_headerToolbar addSubview:self.bountyLabel];
+        [_headerToolbar setItems:@[self.flexibleSpace, self.cameraButton]];
     }
 
-    return _titleLabel;
+    return _headerToolbar;
 }
 
-- (CGRect)titleLabelFrame {
+- (CGRect)headerToolbarFrame {
     CGRect frame = self.bounds;
 
     frame.size.height = 44.0f;
@@ -72,9 +81,62 @@
 - (CGRect)mapViewFrame {
     CGRect frame = self.bounds;
 
+    frame.size.height -= self.detailTextViewFrame.size.height;
+
     return frame;
 }
 
+- (UITextView *)detailTextView {
+    if (!_detailTextView) {
+        _detailTextView = [[UITextView alloc] initWithFrame:self.detailTextViewFrame];
+        _detailTextView.editable = NO;
+    }
+
+    return _detailTextView;
+}
+
+- (CGRect)detailTextViewFrame {
+    CGRect frame = self.bounds;
+
+    frame.size.height = 80.0f;
+    frame.origin.y = self.bounds.size.height - frame.size.height;
+
+    return frame;
+}
+
+- (UILabel *)bountyLabel {
+    if (!_bountyLabel) {
+        _bountyLabel = [[UILabel alloc] initWithFrame:self.bountyLabelFrame];
+        _bountyLabel.textColor = [UIColor blackColor];
+    }
+
+    return _bountyLabel;
+}
+
+- (CGRect)bountyLabelFrame {
+    CGRect frame = self.headerToolbar.bounds;
+
+    frame.size.width *= 0.5f;
+    frame.origin.x = 10.0f;
+
+    return frame;
+}
+
+- (UIBarButtonItem *)flexibleSpace {
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                         target:self
+                                                         action:nil];
+}
+
+- (UIBarButtonItem *)cameraButton {
+    if (!_cameraButton) {
+        _cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera
+                                                                      target:self
+                                                                      action:@selector(takePhoto:)];
+    }
+
+    return _cameraButton;
+}
 
 
 
@@ -95,6 +157,9 @@
     _pointAnnotation.title = localRequest.title;
     _pointAnnotation.subtitle = [NSString stringWithFormat:@"%@", localRequest.bounty.stringExpression];
     [self.mapView addAnnotation:_pointAnnotation];
+
+    self.detailTextView.text = [NSString stringWithFormat:@"%@\n%@", _localRequest.title, _localRequest.requestDescription];
+    self.bountyLabel.text = _localRequest.bounty.stringExpression;
 }
 
 
@@ -146,6 +211,9 @@
         // image picker needs a delegate so we can respond to its messages
         [_imagePickerController setDelegate:self];
     }
+
+    [self hide];
+
     // Place image picker on the screen
     [self.presentingViewController presentViewController:_imagePickerController
                                                 animated:YES
@@ -155,8 +223,6 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    [self hide];
-
     [_imagePickerController dismissViewControllerAnimated:YES
                                                completion:^{
 
@@ -166,8 +232,6 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self hide];
-
     [_imagePickerController dismissViewControllerAnimated:YES
                                                completion:^{
 
