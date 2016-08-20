@@ -22,6 +22,7 @@
 		8045CB021D68074100C84A3C /* PQRSellerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB011D68074100C84A3C /* PQRSellerMapViewController.m */; };
 		8045CB061D68087800C84A3C /* PQRUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB051D68087800C84A3C /* PQRUserManager.m */; };
 		8045CB091D680A2100C84A3C /* PQRMainFooterToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB081D680A2100C84A3C /* PQRMainFooterToolbar.m */; };
+		8045CB0D1D6818CE00C84A3C /* PQRSellerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB0C1D6818CE00C84A3C /* PQRSellerListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		8045CB051D68087800C84A3C /* PQRUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRUserManager.m; sourceTree = "<group>"; };
 		8045CB071D680A2100C84A3C /* PQRMainFooterToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRMainFooterToolbar.h; sourceTree = "<group>"; };
 		8045CB081D680A2100C84A3C /* PQRMainFooterToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRMainFooterToolbar.m; sourceTree = "<group>"; };
+		8045CB0B1D6818CE00C84A3C /* PQRSellerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRSellerListViewController.h; sourceTree = "<group>"; };
+		8045CB0C1D6818CE00C84A3C /* PQRSellerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 			children = (
 				8045CB001D68074100C84A3C /* PQRSellerMapViewController.h */,
 				8045CB011D68074100C84A3C /* PQRSellerMapViewController.m */,
+				8045CB0B1D6818CE00C84A3C /* PQRSellerListViewController.h */,
+				8045CB0C1D6818CE00C84A3C /* PQRSellerListViewController.m */,
 			);
 			name = Controllers;
 			path = ..;
@@ -340,6 +345,7 @@
 				8045CAC41D67DB5100C84A3C /* ViewController.m in Sources */,
 				8045CACA1D67DB5100C84A3C /* Photo_ReQuester.xcdatamodeld in Sources */,
 				8045CB061D68087800C84A3C /* PQRUserManager.m in Sources */,
+				8045CB0D1D6818CE00C84A3C /* PQRSellerListViewController.m in Sources */,
 				8045CAC11D67DB5100C84A3C /* AppDelegate.m in Sources */,
 				8045CAFE1D67F07700C84A3C /* PQRLocationManager.m in Sources */,
 				8045CB091D680A2100C84A3C /* PQRMainFooterToolbar.m in Sources */,

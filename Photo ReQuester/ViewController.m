@@ -14,6 +14,7 @@
 #import "PQRMainFooterToolbar.h"
 
 #import "PQRSellerMapViewController.h"
+#import "PQRSellerListViewController.h"
 
 @interface ViewController () <PQRMainFooterToolbarDelegate>
 
@@ -43,7 +44,7 @@
 
 - (void)updateChildren {
     UIViewController *childVC = [self currentChildViewController];
-    if (![self.childViewControllers containsObject:childVC]) {
+    if (childVC && ![self.childViewControllers containsObject:childVC]) {
         [self pushViewController:childVC
                         animated:YES];
     }
@@ -59,7 +60,7 @@
                 break;
 
             case PQRSellerVCList:
-                return [UIViewController new];
+                return PQRSellerListViewController.sharedListController;
                 break;
 
             case PQRSellerVCPhoto:
