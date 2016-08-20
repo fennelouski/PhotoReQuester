@@ -8,10 +8,16 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "PQRUserManager.h"
+#import "PQRSellerDataManager.h"
 
-@property (nonatomic, strong) UIToolbar *footerToolbar;
-@property (nonatomic, strong) UIBarButtonItem *flexibleSpace, *buyerButton, *sellerButton;
+#import "PQRMainFooterToolbar.h"
+
+#import "PQRSellerMapViewController.h"
+
+@interface ViewController () <PQRMainFooterToolbarDelegate>
+
+@property (nonatomic, strong) PQRMainFooterToolbar *footerToolbar;
 
 @end
 
@@ -24,70 +30,45 @@
     [self.view addSubview:self.footerToolbar];
 }
 
-
-
-
-
-- (UIToolbar *)footerToolbar {
+- (PQRMainFooterToolbar *)footerToolbar {
     if (!_footerToolbar) {
-        _footerToolbar = [[UIToolbar alloc] initWithFrame:self.footerToolbarFrame];
-        [_footerToolbar setItems:@[self.flexibleSpace, self.buyerButton]
-                        animated:YES];
+        _footerToolbar = [[PQRMainFooterToolbar alloc] init];
+        _footerToolbar.footerToolbarDelegate = self;
     }
 
     return _footerToolbar;
 }
 
-- (CGRect)footerToolbarFrame {
-    CGRect frame = self.view.bounds;
+#pragma mark - PQRMainFooterToolbarDelegate
 
-    frame.size.height = 44.0f;
-    frame.origin.y = self.view.bounds.size.height - frame.size.height;
-    frame.size.width = self.view.bounds.size.width;
-
-    return frame;
+- (void)updateChildren {
+    [self pushViewController:[self currentChildViewController]
+                    animated:YES];
 }
 
-- (UIBarButtonItem *)flexibleSpace {
-    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                         target:self
-                                                         action:nil];
-}
+- (UIViewController *)currentChildViewController {
+    if (PQRUserManager.isBuyer) {
 
-- (UIBarButtonItem *)buyerButton {
-    if (!_buyerButton) {
-        _buyerButton = [[UIBarButtonItem alloc] initWithTitle:@"Switch to buyer"
-                                                        style:UIBarButtonItemStylePlain
-                                                       target:self
-                                                       action:@selector(buyerButtonTouched:)];
+    } else if (PQRUserManager.isSeller) {
+        switch (PQRSellerDataManager.currentVCType) {
+            case PQRSellerVCMap:
+                return PQRSellerMapViewController.new;
+                break;
+
+            case PQRSellerVCList:
+                return [UIViewController new];
+                break;
+
+            case PQRSellerVCPhoto:
+                return [UIViewController new];
+                break;
+                
+            default:
+                break;
+        }
     }
 
-    return _buyerButton;
-}
-
-- (UIBarButtonItem *)sellerButton {
-    if (!_sellerButton) {
-        _sellerButton = [[UIBarButtonItem alloc] initWithTitle:@"Switch to seller"
-                                                         style:UIBarButtonItemStylePlain
-                                                        target:self
-                                                        action:@selector(sellerButtonTouched:)];
-    }
-
-    return _sellerButton;
-}
-
-
-
-#pragma mark - Button Actions
-
-- (void)buyerButtonTouched:(id)sender {
-    [self.footerToolbar setItems:@[self.flexibleSpace, self.sellerButton]
-                        animated:YES];
-}
-
-- (void)sellerButtonTouched:(id)sender {
-    [self.footerToolbar setItems:@[self.flexibleSpace, self.buyerButton]
-                        animated:YES];
+    return nil;
 }
 
 

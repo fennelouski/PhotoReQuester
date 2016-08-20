@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, PQRSellerVC) {
+    PQRSellerVCMap,
+    PQRSellerVCList,
+    PQRSellerVCPhoto,
+};
+
 @interface PQRSellerDataManager : NSObject
+
++ (NSArray *)takenPhotos;
+
++ (PQRSellerVC)currentVCType;
++ (void)setCurrentVCType:(PQRSellerVC)currentVCType;
 
 @end
