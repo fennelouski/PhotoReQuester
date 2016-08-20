@@ -24,6 +24,8 @@
 		8045CB091D680A2100C84A3C /* PQRMainFooterToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB081D680A2100C84A3C /* PQRMainFooterToolbar.m */; };
 		8045CB0D1D6818CE00C84A3C /* PQRSellerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB0C1D6818CE00C84A3C /* PQRSellerListViewController.m */; };
 		8045CB101D68199200C84A3C /* PQRSellerListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB0F1D68199200C84A3C /* PQRSellerListTableView.m */; };
+		8045CB161D681B8A00C84A3C /* PQRLocalRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB151D681B8A00C84A3C /* PQRLocalRequestModel.m */; };
+		8045CB191D681BEF00C84A3C /* PQRCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 8045CB181D681BEF00C84A3C /* PQRCurrency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,10 @@
 		8045CB0C1D6818CE00C84A3C /* PQRSellerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerListViewController.m; sourceTree = "<group>"; };
 		8045CB0E1D68199200C84A3C /* PQRSellerListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRSellerListTableView.h; sourceTree = "<group>"; };
 		8045CB0F1D68199200C84A3C /* PQRSellerListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRSellerListTableView.m; sourceTree = "<group>"; };
+		8045CB141D681B8A00C84A3C /* PQRLocalRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRLocalRequestModel.h; sourceTree = "<group>"; };
+		8045CB151D681B8A00C84A3C /* PQRLocalRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRLocalRequestModel.m; sourceTree = "<group>"; };
+		8045CB171D681BEF00C84A3C /* PQRCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQRCurrency.h; sourceTree = "<group>"; };
+		8045CB181D681BEF00C84A3C /* PQRCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQRCurrency.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,8 @@
 				8045CAF61D67EF0400C84A3C /* PQRPhotoModel.m */,
 				8045CAF91D67EFB500C84A3C /* PQRSellerDataManager.h */,
 				8045CAFA1D67EFB500C84A3C /* PQRSellerDataManager.m */,
+				8045CB141D681B8A00C84A3C /* PQRLocalRequestModel.h */,
+				8045CB151D681B8A00C84A3C /* PQRLocalRequestModel.m */,
 			);
 			name = "Seller Model";
 			path = ..;
@@ -190,6 +198,8 @@
 				8045CAFC1D67F07700C84A3C /* PQRLocationManager.h */,
 				8045CAFD1D67F07700C84A3C /* PQRLocationManager.m */,
 				8045CAF81D67EF5800C84A3C /* Seller Model */,
+				8045CB171D681BEF00C84A3C /* PQRCurrency.h */,
+				8045CB181D681BEF00C84A3C /* PQRCurrency.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -349,6 +359,7 @@
 			files = (
 				8045CAC41D67DB5100C84A3C /* ViewController.m in Sources */,
 				8045CACA1D67DB5100C84A3C /* Photo_ReQuester.xcdatamodeld in Sources */,
+				8045CB191D681BEF00C84A3C /* PQRCurrency.m in Sources */,
 				8045CB061D68087800C84A3C /* PQRUserManager.m in Sources */,
 				8045CB0D1D6818CE00C84A3C /* PQRSellerListViewController.m in Sources */,
 				8045CB101D68199200C84A3C /* PQRSellerListTableView.m in Sources */,
@@ -359,6 +370,7 @@
 				8045CAFB1D67EFB500C84A3C /* PQRSellerDataManager.m in Sources */,
 				8045CB021D68074100C84A3C /* PQRSellerMapViewController.m in Sources */,
 				8045CAF71D67EF0400C84A3C /* PQRPhotoModel.m in Sources */,
+				8045CB161D681B8A00C84A3C /* PQRLocalRequestModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
