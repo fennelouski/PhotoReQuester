@@ -57,6 +57,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:self.titleLabelFrame];
         [_titleLabel setTextColor:[NKFColor appColor]];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
     }
 
     return _titleLabel;
@@ -65,8 +66,9 @@
 - (CGRect)titleLabelFrame {
     CGRect frame = self.bounds;
 
-    frame.origin.x = 20.0f;
+    frame.origin.x = 10.0f;
     frame.size.height = self.bounds.size.height * 0.5f;
+    frame.size.width -= frame.origin.x * 2.0f;
 
     return frame;
 }
@@ -74,7 +76,8 @@
 - (UILabel *)subtitleLabel {
     if (!_subtitleLabel) {
         _subtitleLabel = [[UILabel alloc] initWithFrame:self.subtitleLabelFrame];
-        [_subtitleLabel setTextColor:[NKFColor appColor]];
+        [_subtitleLabel setTextColor:[NKFColor appColor].lightenColor];
+        _subtitleLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     }
 
     return _subtitleLabel;
@@ -83,9 +86,10 @@
 - (CGRect)subtitleLabelFrame {
     CGRect frame = self.bounds;
 
-    frame.origin.x = 30.0f;
+    frame.origin.x = 10.0f;
     frame.origin.y = self.bounds.size.height * 0.5f;
     frame.size.height = frame.origin.y;
+    frame.size.width -= frame.origin.x * 2.0f;
 
     return frame;
 }
@@ -94,6 +98,7 @@
     if (!_bountyLabel) {
         _bountyLabel = [[UILabel alloc] initWithFrame:self.bountyLabelFrame];
         [_bountyLabel setTextColor:[NKFColor appColor]];
+        _bountyLabel.textAlignment = NSTextAlignmentRight;
     }
 
     return _bountyLabel;
@@ -102,9 +107,9 @@
 - (CGRect)bountyLabelFrame {
     CGRect frame = self.bounds;
 
-    frame.origin.x = 30.0f;
-    frame.origin.y = self.bounds.size.height * 0.5f;
-    frame.size.height = frame.origin.y;
+    frame.origin.x = 10.0f;
+    frame.size.height = self.bounds.size.height * 0.5f;
+    frame.size.width -= frame.origin.x * 2.0f;
 
     return frame;
 }
@@ -112,7 +117,9 @@
 - (UILabel *)distanceLabel {
     if (!_distanceLabel) {
         _distanceLabel = [[UILabel alloc] initWithFrame:self.distanceLabelFrame];
-        [_distanceLabel setTextColor:[NKFColor appColor]];
+        [_distanceLabel setTextColor:[NKFColor appColor].lightenColor];
+        _distanceLabel.textAlignment = NSTextAlignmentRight;
+        _distanceLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     }
 
     return _distanceLabel;
@@ -121,9 +128,10 @@
 - (CGRect)distanceLabelFrame {
     CGRect frame = self.bounds;
 
-    frame.origin.x = 30.0f;
+    frame.origin.x = 10.0f;
     frame.origin.y = self.bounds.size.height * 0.5f;
     frame.size.height = frame.origin.y;
+    frame.size.width -= frame.origin.x * 2.0f;
 
     return frame;
 }
