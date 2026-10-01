@@ -10,4 +10,11 @@ pod 'Google/SignIn'
 pod 'AFNetworking'
 end
 
+post_install do
+  %w[AFNetworkReachabilityManager.m AFHTTPSessionManager.m].each do |name|
+    path = "Pods/AFNetworking/AFNetworking/#{name}"
+    source = File.read(path)
+    File.write(path, source.gsub(/^#import <netinet6\/in6\.h>\n/, ''))
+  end
+end
 
